@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.game-conteiner{
+    width: 450px;
+    height: 450px;
+    padding: 12px 0 0 12px;
+    position: relative;
+    margin: 20px auto 0 auto;
+    background-color: #776e65;
+    color: #776e65;
+    font-family: clear sans,helvetica neue,Arial,sans-serif;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.grid-conteiner{
+    position: absolute;
+    margin: auto;
+    z-index: 1;
+}
+
+.grid-row{
+    margin-bottom: 15px;
+}
+
+.grid-row:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.grid-cell{
+    display: block;
+    width: 97.5px;
+    height: 97.5px;
+    margin-right: 15px;
+    float: left;
+    border-radius: 3px;
+    background: rgba(238,228,218,.35);
+}
+
+.tile-conteiner{
+    position: absolute;
+    z-index: 2;
+}
+
+.tile {
+    position: absolute;
+    -webkit-transition: 100ms ease-in-out;
+    -moz-transition: 100ms ease-in-out;
+    transition: 100ms ease-in-out;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+}
+
+.tile .tile-inner{
+    border-radius: 3px;
+    background: #eee4da;
+    text-align: center;
+    font-weight: 700;
+    z-index: 10;
+    font-size: 65px;
+    width: 98px;
+    height: 98px;
+    line-height: 100.5px;
+}
+
+.tile.tile-2 .tile-inner {
+    background: #eee4da;
+    box-shadow: 0 0 30px 10px transparent, inset 0 0 0 1px transparent;
+}
+
+.tile.tile-4 .tile-inner {
+    background: #ede0c8;
+    box-shadow: 0 0 30px 10px transparent, inset 0 0 0 1px transparent;
+}
+
+.tile.tile-8 .tile-inner {
+    color: #f9f6f2;
+    background: #f2b179;
+}
+
+.tile.tile-position-1-1{
+    -webkit-transform:translate(0px,0px);
+    -moz-transform:translate(0px,0px);
+    transform:translate(0px,0px)
+}
+
+.tile.tile-position-2-1{
+    -webkit-transform:translate(0px,111.6px);
+    -moz-transform:translate(0px,111.6px);
+    transform:translate(0px,111.6px)
+}
+
+.tile.tile-position-3-1{
+    -webkit-transform:translate(0px,225.6px);
+    -moz-transform:translate(0px,225.6px);
+    transform:translate(0px,225.6px)
+}
+
+.tile.tile-position-4-1{
+    -webkit-transform:translate(0px,339.6px);
+    -moz-transform:translate(0px,338.6px);
+    transform:translate(0px,338.6px)
+}
+
+.tile.tile-position-1-2{
+    -webkit-transform:translate(111.6px,0px);
+    -moz-transform:translate(111.6px,0px);
+    transform:translate(111.6px,0px)
+}
+
+.tile.tile-position-2-2{
+    -webkit-transform:translate(111.6px,111.6px);
+    -moz-transform:translate(111.6px,111.6px);
+    transform:translate(111.6px,111.6px)
+}
+
+.tile.tile-position-3-2{
+    -webkit-transform:translate(111.6px,225.6px);
+    -moz-transform:translate(111.6px,225.6px);
+    transform:translate(111.6px,225.6px)
+}
+
+.tile.tile-position-4-2{
+    -webkit-transform:translate(111.6px,338.6px);
+    -moz-transform:translate(111.6px,338.6px);
+    transform:translate(111.6px,338.6px)
+}
+
+.tile.tile-position-1-3{
+    -webkit-transform:translate(225.6px,0px);
+    -moz-transform:translate(225.6px,0px);
+    transform:translate(225.6px,0px)
+}
+
+.tile.tile-position-2-3{
+    -webkit-transform:translate(225.6px,111.6px);
+    -moz-transform:translate(225.6px,111.6px);
+    transform:translate(225.6px,111.6px)
+}
+
+.tile.tile-position-3-3{
+    -webkit-transform:translate(225.6px,225.6px);
+    -moz-transform:translate(225.6px,225.6px);
+    transform:translate(225.6px,225.6px)
+}
+
+.tile.tile-position-4-3{
+    -webkit-transform:translate(225.6px,338.6px);
+    -moz-transform:translate(225.6px,338.6px);transform:translate(225.6px,338.6px)
+}
+
+.tile.tile-position-1-4{
+    -webkit-transform:translate(338.6px,0px);
+    -moz-transform:translate(338.6px,0px);
+    transform:translate(338.6px,0px)
+}
+
+.tile.tile-position-2-4{
+    -webkit-transform:translate(338.6px,111.6px);
+    -moz-transform:translate(338.6px,111.6px);
+    transform:translate(338.6px,111.6px)
+}
+
+.tile.tile-position-3-4{
+    -webkit-transform:translate(338.6px,225.6px);
+    -moz-transform:translate(338.6px,225.6px);
+    transform:translate(338.6px,225.6px)
+}
+
+.tile.tile-position-4-4{
+    -webkit-transform:translate(338.6px,338.6px);
+    -moz-transform:translate(338.6px,338.6px);
+    transform:translate(338.6px,338.6px)
+}
