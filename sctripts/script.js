@@ -31,9 +31,9 @@ function getRandomInRange(min, max) {
 gameStart()*/
 
 function test(){
-    tileArray[3][0] = {'y': 4, 'x': 1,'num':2, 'tile': `tile-position-${4}-${1}`}
+    //tileArray[3][0] = {'y': 4, 'x': 1,'num':2, 'tile': `tile-position-${4}-${1}`}
     tileArray[2][0] = {'y': 3, 'x': 1,'num':2, 'tile': `tile-position-${3}-${1}`}
-    tileConteiner.innerHTML += `<div class="tile tile-2 tile-position-4-1"><div class="tile-inner">2</div></div>`;
+    //tileConteiner.innerHTML += `<div class="tile tile-2 tile-position-4-1"><div class="tile-inner">2</div></div>`;
     tileConteiner.innerHTML += `<div class="tile tile-2 tile-position-3-1"><div class="tile-inner">2</div></div>`;
 }
 
@@ -41,24 +41,32 @@ test()
 console.log(tileArray)
 document.addEventListener("keydown", function(event){
     if(event.code == 'ArrowDown'){
-        for(let y = tileArray.length-2; y >= 0; y--){1
-            if(tileArray[y][0].length != 0){
-                if(tileArray[y][0].length == 0){
-                    console.log('down')
+        for(let y = 0; y < tileArray.length; y++){
+            for(let x = 0; x < tileArray[y].length; y++){
+                if(tileArray[y][x].length != 0){
+                    if(tileArray[y+1][x].length != 0){
+
+                    } 
                 }
-                else{
-                    if(tileArray[y][0].num != tileArray[y+1][0].num){
-                        continue
-                    }
-                    else{
-                        let tile = document.querySelector(`.${tileArray[y][0].tile}`)
-                        tile.classList.remove(`${tileArray[y][0].tile}`, `.tile-${tileArray[y][0].num}`)
-                        tile.classList.add(`tile-position-${tileArray[y][0].y + 1}-${tileArray[y][0].x}`)
-                        document.querySelector(`.${tileArray[y+1][0].tile}`).remove()
-                        
-                    }
-                }
-            }   
+            }
         }
     }
 });
+
+// if(tileArray[y][0].length != 0){
+//     if(tileArray[y][0].length == 0){
+//         console.log('down')
+//     }
+//     else{
+//         if(tileArray[y][0].num != tileArray[y+1][0].num){
+//             continue
+//         }
+//         else{
+//             let tile = document.querySelector(`.${tileArray[y][0].tile}`)
+//             tile.classList.remove(`${tileArray[y][0].tile}`, `.tile-${tileArray[y][0].num}`)
+//             tile.classList.add(`tile-position-${tileArray[y][0].y + 1}-${tileArray[y][0].x}`)
+//             document.querySelector(`.${tileArray[y+1][0].tile}`).remove()
+            
+//         }
+//     }
+// } 
