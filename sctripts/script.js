@@ -1,4 +1,4 @@
-import {printArray, shuffle, getNumberFromIndex, getIndexFromNumber, insert_2_or_4, getEmptyList, isZeroInMas,} from './gameController.js'
+//import {printArray, shuffle, getNumberFromIndex, getIndexFromNumber, insert_2_or_4, getEmptyList, isZeroInMas, gameStart, newNumberOnBoard, moveLeft, printArrayOnBoard, moveRight, moveUp, moveDown, canMove} from './gameController.js'
 
 
 let tileArray = [
@@ -8,23 +8,51 @@ let tileArray = [
     [0, 0, 0, 0]
 ];
 
-tileArray[1][2] = 2
-tileArray[3][0] = 4
-console.log(getIndexFromNumber(13))
-console.log(getEmptyList(tileArray))
-printArray(tileArray)
+let score = 0;
+
+const scoreBar = document.querySelector('.score-bar')
+// console.log(getIndexFromNumber(13))
+// console.log(getEmptyList(tileArray))
+//printArray(tileArray)
+
+gameStart(tileArray)
 
 document.addEventListener("keydown", function(event){
-    if(isZeroInMas(tileArray)){
-        if(event.code == 'ArrowDown'){
-            let emptyArray = getEmptyList(tileArray)
-            shuffle(emptyArray)
-            let random_num = emptyArray.pop()
-            let x = getIndexFromNumber(random_num)[0]
-            let y = getIndexFromNumber(random_num)[1]
-            tileArray = insert_2_or_4(tileArray, x, y)
-            console.log(`Мы заполнили ячейку под номером ${random_num}`)
-            printArray(tileArray)
+    if(isZeroInMas(tileArray) || canMove(tileArray)){
+        switch(event.code){
+            case 'ArrowLeft': 
+                let arrayMoveLeft = moveLeft(tileArray)
+                tileArray = arrayMoveLeft[0]
+                score += arrayMoveLeft[1]
+                scoreBar.innerHTML = `Счет: ${score}`
+                if(isZeroInMas(tileArray)){newNumberOnBoard(tileArray)}
+                printArrayOnBoard(tileArray)
+                break
+            case 'ArrowRight':
+                let arrayMoveRigth = moveRight(tileArray)
+                tileArray = arrayMoveRigth[0]
+                score += arrayMoveRigth[1]
+                scoreBar.innerHTML = `Счет: ${score}`
+                if(isZeroInMas(tileArray)){newNumberOnBoard(tileArray)}
+                printArrayOnBoard(tileArray)
+                break
+            case 'ArrowUp':
+                let arrayMoveUp = moveUp(tileArray)
+                tileArray = arrayMoveUp[0]
+                score += arrayMoveUp[1]
+                scoreBar.innerHTML = `Счет: ${score}`
+                if(isZeroInMas(tileArray)){newNumberOnBoard(tileArray)}
+                printArrayOnBoard(tileArray)
+                break
+            case 'ArrowDown':
+                let arrayMoveDown = moveDown(tileArray)
+                tileArray = arrayMoveDown[0]
+                score += arrayMoveDown[1]
+                scoreBar.innerHTML = `Счет: ${score}`
+                if(isZeroInMas(tileArray)){newNumberOnBoard(tileArray)}
+                printArrayOnBoard(tileArray)
+                break    
+
         }
     }else{
         console.log("Game Over")
