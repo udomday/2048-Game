@@ -81,7 +81,7 @@ function isZeroInMas(array){
     return false
 }
 
-function moveLeft(array){
+function moveLeft(array, canMoveArray){
     let delta = 0
     array = array.map(row => {
         while(row.includes(0)){
@@ -95,7 +95,6 @@ function moveLeft(array){
         return row
     })
     for(let i = 0; i < 4; i++){
-       
         for(let j = 0; j < 3; j++){
             if(array[i][j] === array[i][j+1] && array[i][j] != 0){
                 array[i][j] = array[i][j]*2
@@ -105,10 +104,11 @@ function moveLeft(array){
             }
        }
     }
+    if(isZeroInMas(array) && !arraysEqual(array, canMoveArray)){newNumberOnBoard(array)}
     return [array, delta]
 }
 
-function moveRight(array){
+function moveRight(array, canMoveArray){
     let delta = 0
     array = array.map(row => {
         while(row.includes(0)){
@@ -122,7 +122,6 @@ function moveRight(array){
         return row
     })
     for(let i = 0; i < 4; i++){
-       
         for(let j = 3; j > 0; j--){
             if(array[i][j] === array[i][j-1] && array[i][j] != 0){
                 array[i][j] = array[i][j]*2
@@ -132,10 +131,11 @@ function moveRight(array){
             }
        }
     }
+    if(isZeroInMas(array) && !arraysEqual(array, canMoveArray)){newNumberOnBoard(array)}
     return [array, delta]
 }
 
-function moveUp(array){
+function moveUp(array, canMoveArray){
     let delta = 0
     for(let j = 0; j < 4; j++){
         let column = []
@@ -159,10 +159,11 @@ function moveUp(array){
             array[i][j] = column[i]
         }
     }
+    if(isZeroInMas(array) && !arraysEqual(array, canMoveArray)){newNumberOnBoard(array)}
     return [array, delta]
 }
 
-function moveDown(array){
+function moveDown(array, canMoveArray){
     let delta = 0
     for(let j = 0; j < 4; j++){
         let column = []
@@ -186,14 +187,13 @@ function moveDown(array){
             array[i][j] = column[i]
         }
     }
+    if(isZeroInMas(array) && !arraysEqual(array, canMoveArray)){newNumberOnBoard(array)}
     return [array, delta]
 }
 
 function canMove(array){
     for(let i = 0; i < 4; i++){
         for(let j = 0; j < 4; j++){
-            console.log(i,j)
-            console.log(array)
             if(i == 3){
                if(j != 3){
                 if(array[i][j]==array[i][j+1]){
@@ -214,6 +214,20 @@ function canMove(array){
     }
     return false
 }
+
+function arraysEqual(array1, array2) {
+    if (array1 === array2) return true;
+    if (array1 == null || array2 == null) return false;
+    if (array1.length !== array2.length) return false;
+  
+    for (let i = 0; i < array1.length; i++) {
+        if(array1[i].length != array2[i].length) return false
+        for(let j = 0; j < array1[i].length; j++){
+            if (array1[i][j] !== array2[i][j]) return false;
+        }
+    }
+    return true;
+  }
 
 //export {printArray, shuffle, getNumberFromIndex, getIndexFromNumber, insert_2_or_4, getEmptyList, isZeroInMas, gameStart, newNumberOnBoard, moveLeft, printArrayOnBoard, moveRight, moveUp, moveDown, canMove}
 
