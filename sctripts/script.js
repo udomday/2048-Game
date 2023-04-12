@@ -57,7 +57,7 @@ document.addEventListener("keydown", function(event){
     }
     else{
         alert("Game Over")
-        restartGame(tileArray)
+        tileArray = restartGame(tileArray)
     }
 });
 

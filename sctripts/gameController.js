@@ -251,6 +251,7 @@ function restartGame(array){
     ]
     console.clear()
     gameStart(array)
+    return array
 }
 
 //export {printArray, shuffle, getNumberFromIndex, getIndexFromNumber, insert_2_or_4, getEmptyList, isZeroInMas, gameStart, newNumberOnBoard, moveLeft, printArrayOnBoard, moveRight, moveUp, moveDown, canMove}
