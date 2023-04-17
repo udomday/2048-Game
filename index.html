@@ -1,45 +1,25 @@
 <!DOCTYPE html>
-<header>
-    <meta charset="utf-8"/>
-    <title>2048 Game</title>
-    <link rel="stylesheet" href="style/style.css"/>
-</header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 game</title>
+    <link rel="stylesheet" href="./styles/style.css"/>
+</head>
 <body>
     <div class="header">
-        <div class="score-bar">Счет: 0</div>
-        <button class="bttn-restart-game">Новая игра</button>
-    </div>
-    <div class = "game-conteiner">
-        <div class="grid-conteiner">
-            <div class = "grid-row">
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-            </div>
-            <div class = "grid-row">
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-            </div>
-            <div class = "grid-row">
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"l></div>
-            </div>
-            <div class = "grid-row">
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-                <div class = "grid-cell"></div>
-            </div>
+        <div class="header-left">
+            <div>2048 GAME</div>
+            <div id="score">Счёт: 0</div>
         </div>
-        <div class="tile-conteiner">
-            
+        <div class="header-right">
+            <div tabindex="0" id="restart-game">Новая игра</div>
         </div>
     </div>
-    <script  src="sctripts/gameController.js"></script>
-    <script  src="sctripts/script.js"></script>
+    <div id="game-board">
+
+    </div>
+    <script src="./scripts/script.js" type="module"></script>
 </body>
+</html>
