@@ -32,8 +32,8 @@ export class Tile {
         this.tileElemnt.textContent = value;
         const bgLightness = 100 - Math.log2(value) * 9;
         this.tileElemnt.style.setProperty('--bg-lightness', `${tileColor[value]}`);
-        this.tileElemnt.style.setProperty('--text-lightness', `${bgLightness < 50 ? 90 : 10}%`)
-
+        this.tileElemnt.style.setProperty('--text-lightness', `${value >= 8 ? `#f9f6f2` : `#292828`}`)
+        
     }
 
     removeFromDOM(){

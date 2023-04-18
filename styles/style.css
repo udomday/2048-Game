@@ -85,8 +85,7 @@ body{
     font-size: 7.5vmin;
     font-weight: bold;
     background-color:var(--bg-lightness);
-    color: hsl(25, 25%, var(--text-lightness));
-    color:#000;
+    color: var(--text-lightness);
     transition: 100ms;
     animation: show 200ms;
 }
