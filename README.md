@@ -1,3 +1,2 @@
 # 2048-Game
-2048 game in browser
-run via liveServer in VSC
+ссылка на игру https://udomday.github.io/2048-Game/
