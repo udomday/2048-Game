@@ -1,9 +1,19 @@
 import { Grid } from "./grid.js";
 import { Tile } from "./tile.js";
 
+const gobackBttn = document.querySelector("#goback-bttn");
+gobackBttn.addEventListener("click", () => {
+    window.location = "../../"
+});
+
 const gameBoard = document.getElementById('game-board');
 const scoreBar = document.getElementById('score');
 const grid = new Grid(gameBoard);
+
+const bttnUp = document.querySelector("#bttn-up");
+const bttnDown = document.querySelector("#bttn-down");
+const bttnLeft = document.querySelector("#bttn-left");
+const bttnRight = document.querySelector("#bttn-right");
 
 document.getElementById('restart-game').addEventListener('click', () => restartGame());
 
@@ -17,9 +27,17 @@ gameStart();
 
 function setUpInputOnce(){
     window.addEventListener('keydown', handleInput, {once: true});
+    bttnUp.addEventListener('click', handleInput, {once: true});
+    bttnDown.addEventListener('click', handleInput, {once: true});
+    bttnLeft.addEventListener('click', handleInput, {once: true});
+    bttnRight.addEventListener('click', handleInput, {once: true});
 }
 
 async function handleInput(event) {
+    if(event.target.tagName === "DIV"){
+        event.key = event.target.getAttribute("direction");
+    }
+
     switch(event.key) {
         case 'ArrowUp':
             if(!canMoveUp()){
