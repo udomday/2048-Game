@@ -1,6 +1,10 @@
 import { Grid } from "./grid.js";
 import { Tile } from "./tile.js";
 
+if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.querySelector(".game-bar").style.display = "none"
+}
+
 const gobackBttn = document.querySelector("#goback-bttn");
 gobackBttn.addEventListener("click", () => {
     window.location = "../../"
