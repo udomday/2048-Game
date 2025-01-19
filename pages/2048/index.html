@@ -8,36 +8,18 @@
     <link rel="stylesheet" href="./styles/style.css"/>
 </head>
 <body>
-    <div class="container">
-        <div class="game-body">
-            <div class="header">
-                <div class="header-left">
-                    <div>2048 GAME</div>
-                    <div id="score">Счёт: 0</div>
-                </div>
-                <div class="header-right">
-                    <div class="menu_button" tabindex="0" id="restart-game">Новая игра</div>
-                </div>
-            </div>
-            <div id="game-board">
-        
-            </div>
+    <div class="header">
+        <div class="header-left">
+            <div>2048 GAME</div>
+            <div id="score">Счёт: 0</div>
         </div>
-        <div class="game-bar"> 
-            <div class="game-bar-header"> 
-                <button class="menu_button" id="goback-bttn">В главное меню</button>
-            </div>
-            <div class="game-bar-controller">
-                <div class="cell" id="bttn-up" direction="ArrowUp">↑</div>
-                <div class="game-bar-controller-bottom">
-                    <div class="cell" id="bttn-left" direction="ArrowLeft">←</div>
-                    <div class="cell" id="bttn-down" direction="ArrowDown">↓</div>
-                    <div class="cell" id="bttn-right" direction="ArrowRight">→</div>
-                </div>
-            </div>
+        <div class="header-right">
+            <div tabindex="0" id="restart-game">Новая игра</div>
         </div>
     </div>
-    
+    <div id="game-board">
+
+    </div>
     <script src="./scripts/script.js" type="module"></script>
 </body>
 </html>

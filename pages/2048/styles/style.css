@@ -16,12 +16,6 @@ body{
     height: 100vh;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px
-}
-
 .header{
     display: flex;
     justify-content: space-between;
@@ -36,18 +30,24 @@ body{
     margin: auto;
 }
 
-.menu_button {
+.header-right{
+    margin: auto 0 auto auto;
+}
+
+.header-right div {
     cursor: pointer;
     user-select: none;
     text-align: center;
-    padding: 10px;
+    padding-top: 1.3vmin;
+    width: 35vmin;
+    height: 8vmin;
     color: #eee6e6;
     background-color: #444;
     border: none;
     transition: all 300ms;
 }
 
-.menu_button:hover {
+.header-right div:hover {
     background-color: #5c5b5b;
 }
 
@@ -61,39 +61,7 @@ body{
     grid-template-rows: repeat(4,var(--cell-size));
     gap: var(--cell-gap);
     border-radius: 1vmin;
-}
-
-.game-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.game-bar-controller .cell{
-    cursor: pointer;
-    color: #eee6e6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20vmin;
-    height: 20vmin;
-}
-
-.game-bar-controller .cell:hover {
-    background-color: #5c5b5b;
-}
-
-.game-bar-controller {
-    gap: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.game-bar-controller-bottom {
-    gap: 5px;
-    display: flex;
+    margin-bottom: 2vmin;
 }
 
 .cell{
